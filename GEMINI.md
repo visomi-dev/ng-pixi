@@ -370,7 +370,7 @@ Follow the pattern `@@{page}{Section}{Description}`:
 Follow **Screaming Architecture** — folder names reveal what the app does, not what framework concepts it uses:
 
 ```
-apps/website/src/app/
+apps/web/site/src/app/
 ├── app.ts                     # Root component
 ├── app.html / app.css         # Root template & styles
 ├── app.config.ts              # Client providers
@@ -491,7 +491,7 @@ describe('Deps', () => {
 ## Code Generation
 
 ```bash
-pnpm nx g @nx/angular:component apps/website/src/app/pages/some-page/some-page
+pnpm nx g @nx/angular:component apps/web/site/src/app/pages/some-page/some-page
 ```
 
 Generated components must be adjusted to follow **all** the conventions above (e.g., remove `Component` suffix, remove `standalone: true`, adjust file names, etc.).

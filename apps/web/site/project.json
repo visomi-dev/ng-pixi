@@ -3,16 +3,16 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/website/src",
+  "sourceRoot": "apps/web/site/src",
   "tags": [],
   "i18n": {
     "locales": {
       "es": {
-        "translation": "apps/website/src/locales/messages.es.json",
+        "translation": "apps/web/site/src/locales/messages.es.json",
         "subPath": "es"
       },
       "en": {
-        "translation": "apps/website/src/locales/messages.en.json",
+        "translation": "apps/web/site/src/locales/messages.en.json",
         "subPath": ""
       }
     }
@@ -22,20 +22,20 @@
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/website",
-        "browser": "apps/website/src/main.ts",
+        "outputPath": "dist/apps/web/site",
+        "browser": "apps/web/site/src/main.ts",
         "polyfills": ["@angular/localize/init"],
-        "tsConfig": "apps/website/tsconfig.app.json",
+        "tsConfig": "apps/web/site/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/website/public"
+            "input": "apps/web/site/public"
           }
         ],
-        "styles": ["apps/website/src/styles.css"],
-        "server": "apps/website/src/main.server.ts",
+        "styles": ["apps/web/site/src/styles.css"],
+        "server": "apps/web/site/src/main.server.ts",
         "ssr": {
-          "entry": "apps/website/src/server.ts"
+          "entry": "apps/web/site/src/server.ts"
         },
         "localize": true,
         "outputMode": "server"
@@ -91,7 +91,7 @@
       "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/website"
+        "reportsDirectory": "../../coverage/apps/web/site"
       }
     },
     "serve-static": {
@@ -100,7 +100,7 @@
       "options": {
         "buildTarget": "website:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/website/browser",
+        "staticFilePath": "dist/apps/web/site/browser",
         "spa": true
       }
     }
